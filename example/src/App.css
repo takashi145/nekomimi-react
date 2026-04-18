@@ -17,6 +17,31 @@
   transform: translateY(3px) scale(0.97);
 }
 
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 8px 0 #ccc;
+  min-width: 240px;
+}
+
 .demo-button {
   padding: 12px 28px;
   font-size: 15px;
