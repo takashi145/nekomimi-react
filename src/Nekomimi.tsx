@@ -4,7 +4,7 @@ import {
   buildEarPaths,
   buildEarTransform,
   getEarMetrics,
-  getEarMidX,
+  getEarPositions,
 } from './nekomimiGeometry';
 import type { EarAlign } from './nekomimiGeometry';
 import { useElementWidth } from './useElementWidth';
@@ -76,10 +76,10 @@ export function Nekomimi({
       }}
     >
       {shouldRenderEars && (() => {
-        const mid = getEarMidX(width, earGap, earAlign, earOffsetX, earScale);
+        const { leftX, rightX } = getEarPositions(width, earGap, earAlign, earOffsetX, earScale);
         const { earL, earR, innerL, innerR, leftCenter, rightCenter } = buildEarPaths(
-          earGap,
-          mid,
+          leftX,
+          rightX,
           earScale,
         );
         const resolvedLeftTilt = leftEarTilt ?? earTilt;

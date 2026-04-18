@@ -1,4 +1,4 @@
-export type EarAlign = 'left' | 'center' | 'right';
+export type EarAlign = 'left' | 'center' | 'right' | 'space-between';
 
 interface Point {
   x: number;
@@ -74,10 +74,33 @@ export function getEarMidX(
   return Math.min(maxMid, Math.max(minMid, baseMid + earOffsetX));
 }
 
-export function buildEarPaths(earGap: number, mid: number, earScale: number): EarPaths {
+export function getEarPositions(
+  width: number,
+  earGap: number,
+  earAlign: EarAlign,
+  earOffsetX: number,
+  earScale: number,
+): { leftX: number; rightX: number } {
+  const { earHalfWidth } = getEarMetrics(earScale);
+  const halfGap = earGap / 2;
+
+  if (earAlign === 'space-between') {
+    return {
+      leftX: earHalfWidth,
+      rightX: width - earHalfWidth,
+    };
+  }
+
+  const mid = getEarMidX(width, earGap, earAlign, earOffsetX, earScale);
+  return {
+    leftX: mid - (earHalfWidth + halfGap),
+    rightX: mid + (earHalfWidth + halfGap),
+  };
+}
+
+export function buildEarPaths(leftX: number, rightX: number, earScale: number): EarPaths {
   const metrics = getEarMetrics(earScale);
   const {
-    hSvg,
     earHalfWidth,
     baseY,
     tipY,
@@ -91,10 +114,8 @@ export function buildEarPaths(earGap: number, mid: number, earScale: number): Ea
   const tipLift = earHalfWidth * 0.12;
   const shoulderScale = 0.78;
   const baseLift = (baseY - tipY) * 0.04;
-  const leftX = mid - (earHalfWidth + earGap / 2);
-  const rightX = mid + (earHalfWidth + earGap / 2);
 
-  const px = (value: number) => +(value + 1).toFixed(3);
+  const px = (value: number) => +value.toFixed(3);
   const py = (value: number) => +value.toFixed(3);
   const svgPoint = (x: number, y: number): Point => ({ x: px(x), y: py(y) });
 

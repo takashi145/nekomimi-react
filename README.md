@@ -9,7 +9,7 @@ A small React component that adds cat ears (猫耳) to wrapped UI elements.
 | `children` | `ReactNode` | *(required)* | The content to wrap with cat ears |
 | `earColor` | `string` | `'#ffffff'` | Color of the outer ear |
 | `earGap` | `number` | `10` | Gap between the two ears (px) |
-| `earAlign` | `'left' \| 'center' \| 'right'` | `'center'` | Horizontal alignment of the ears |
+| `earAlign` | `'left' \| 'center' \| 'right' \| 'space-between'` | `'center'` | Horizontal alignment of the ears (`space-between` places ears at the far left and right edges) |
 | `earOffsetX` | `number` | `0` | Horizontal offset for both ears (px) |
 | `leftEarOffsetX` | `number` | `0` | Additional horizontal offset for the left ear |
 | `rightEarOffsetX` | `number` | `0` | Additional horizontal offset for the right ear |
