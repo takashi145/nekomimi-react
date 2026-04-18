@@ -19,6 +19,7 @@ A small React component that adds cat ears (猫耳) to wrapped UI elements.
 | `earTilt` | `number` | `0` | Tilt angle for both ears (degrees) |
 | `leftEarTilt` | `number` | `earTilt` | Tilt angle for the left ear |
 | `rightEarTilt` | `number` | `earTilt` | Tilt angle for the right ear |
+| `earInnerColor` | `string` | `'rgba(190,90,130,0.5)'` | Color of the inner ear |
 | `earInset` | `number` | `0` | How far the ears overlap into the content (px) |
 | `showEars` | `boolean` | `true` | Whether to show the ears |
 | `style` | `CSSProperties` | — | Style applied to the wrapper element |

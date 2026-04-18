@@ -9,7 +9,7 @@ import {
 import type { EarAlign } from './nekomimiGeometry';
 import { useElementWidth } from './useElementWidth';
 
-const INNER_EAR_COLOR = 'rgba(190,90,130,0.5)';
+const DEFAULT_earInnerColor = 'rgba(190,90,130,0.5)';
 const CONTENT_STYLE = { display: 'inline-block' } as const;
 
 export interface NekomimiProps {
@@ -26,6 +26,7 @@ export interface NekomimiProps {
   earTilt?: number;
   leftEarTilt?: number;
   rightEarTilt?: number;
+  earInnerColor?: string;
   earInset?: number;
   showEars?: boolean;
   style?: CSSProperties;
@@ -48,6 +49,7 @@ export function Nekomimi({
   earTilt = 0,
   leftEarTilt,
   rightEarTilt,
+  earInnerColor = DEFAULT_earInnerColor,
   earInset = 0,
   showEars = true,
   style,
@@ -116,12 +118,12 @@ export function Nekomimi({
             />
             <path
               d={innerL}
-              fill={INNER_EAR_COLOR}
+              fill={earInnerColor}
               transform={leftTransform || undefined}
             />
             <path
               d={innerR}
-              fill={INNER_EAR_COLOR}
+              fill={earInnerColor}
               transform={rightTransform || undefined}
             />
           </svg>
