@@ -1,0 +1,31 @@
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.neko-button {
+  transition: transform 0.15s;
+}
+
+.neko-button:hover {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.neko-button:active {
+  transform: translateY(3px) scale(0.97);
+}
+
+.demo-button {
+  padding: 12px 28px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #555;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 0 #333;
+}
