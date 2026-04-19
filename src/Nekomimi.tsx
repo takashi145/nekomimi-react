@@ -61,7 +61,7 @@ export function Nekomimi({
   const width = useElementWidth(ref);
 
   const { hSvg } = getEarMetrics(earScale);
-  const overlap = Math.max(0, earInset + 2);
+  const overlap = Math.max(0, earInset + Math.ceil(2 * earScale));
   const shouldRenderEars = showEars && width > 0;
 
   return (
