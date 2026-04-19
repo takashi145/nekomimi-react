@@ -86,8 +86,8 @@ export function getEarPositions(
 
   if (earAlign === 'space-between') {
     return {
-      leftX: earHalfWidth,
-      rightX: width - earHalfWidth,
+      leftX: earHalfWidth + halfGap + earOffsetX,
+      rightX: width - earHalfWidth - halfGap + earOffsetX,
     };
   }
 
