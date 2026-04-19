@@ -9,13 +9,13 @@ A small React component that adds cat ears (猫耳) to wrapped UI elements.
 | `children` | `ReactNode` | *(required)* | The content to wrap with cat ears |
 | `earColor` | `string` | `'#ffffff'` | Color of the outer ear |
 | `earGap` | `number` | `10` | Gap between the two ears (px) |
-| `earAlign` | `'left' \| 'center' \| 'right' \| 'space-between'` | `'center'` | Horizontal alignment of the ears (`space-between` places ears at the far left and right edges) |
+| `earAlign` | `'left' \| 'center' \| 'right' \| 'space-between'` | `'center'` | Horizontal alignment of the ears (`space-between` places ears at the far edges; `earGap` acts as inset from the edges) |
 | `earOffsetX` | `number` | `0` | Horizontal offset for both ears (px) |
 | `leftEarOffsetX` | `number` | `0` | Additional horizontal offset for the left ear |
 | `rightEarOffsetX` | `number` | `0` | Additional horizontal offset for the right ear |
 | `leftEarOffsetY` | `number` | `0` | Vertical offset for the left ear |
 | `rightEarOffsetY` | `number` | `0` | Vertical offset for the right ear |
-| `earScale` | `number` | `1` | Scale factor for the ear size |
+| `earSize` | `number` | `12` | Ear height in pixels |
 | `earTilt` | `number` | `0` | Tilt angle for both ears (degrees) |
 | `leftEarTilt` | `number` | `earTilt` | Tilt angle for the left ear |
 | `rightEarTilt` | `number` | `earTilt` | Tilt angle for the right ear |
