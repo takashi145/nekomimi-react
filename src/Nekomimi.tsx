@@ -22,7 +22,7 @@ export interface NekomimiProps {
   rightEarOffsetX?: number;
   leftEarOffsetY?: number;
   rightEarOffsetY?: number;
-  earScale?: number;
+  earSize?: number;
   earTilt?: number;
   leftEarTilt?: number;
   rightEarTilt?: number;
@@ -45,7 +45,7 @@ export function Nekomimi({
   rightEarOffsetX = 0,
   leftEarOffsetY = 0,
   rightEarOffsetY = 0,
-  earScale = 1,
+  earSize = 12,
   earTilt = 0,
   leftEarTilt,
   rightEarTilt,
@@ -60,6 +60,7 @@ export function Nekomimi({
   const ref = useRef<HTMLDivElement>(null);
   const width = useElementWidth(ref);
 
+  const earScale = earSize / 12;
   const { hSvg } = getEarMetrics(earScale);
   const overlap = Math.max(0, earInset + Math.ceil(2 * earScale));
   const shouldRenderEars = showEars && width > 0;

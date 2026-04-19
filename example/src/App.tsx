@@ -9,7 +9,7 @@ export function App() {
     <div className="center-wrapper" style={{ display: 'flex', flexDirection: 'column', gap: '48px' }}>
 
       <Nekomimi
-        earScale={1.5}
+        earSize={18}
         earGap={10}
         earColor="#555"
         earAlign='left'
@@ -23,7 +23,7 @@ export function App() {
       </Nekomimi>
 
       <Nekomimi
-        earScale={2}
+        earSize={24}
         earColor="#555"
         earAlign='space-between'
         earInset={4}
@@ -40,8 +40,9 @@ export function App() {
         <div className="modal-overlay" onClick={() => setOpen(false)}>
           <div onClick={e => e.stopPropagation()}>
             <Nekomimi
-              earScale={3}
-							earGap={100}
+              earSize={36}
+							earGap={30}
+							earAlign='space-between'
               earColor="#ffffff"
               earInnerColor="rgba(190,90,130,0.5)"
               earInset={2}
