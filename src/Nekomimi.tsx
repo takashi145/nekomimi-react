@@ -85,7 +85,7 @@ export function Nekomimi({
           rightX,
           earScale,
         );
-        const resolvedLeftTilt = leftEarTilt ?? earTilt;
+        const resolvedLeftTilt = leftEarTilt ?? -earTilt;
         const resolvedRightTilt = rightEarTilt ?? earTilt;
         const leftTransform = buildEarTransform(
           leftEarOffsetX,

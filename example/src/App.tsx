@@ -27,8 +27,7 @@ export function App() {
         earColor="#555"
         earAlign='space-between'
         earInset={4}
-        leftEarTilt={-15}
-        rightEarTilt={15}
+        earTilt={15}
         className="neko-button"
       >
         <button className="demo-button" type="button" onClick={() => setOpen(true)}>
