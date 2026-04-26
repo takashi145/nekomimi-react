@@ -1,38 +1,49 @@
 {
-  "name": "nekomimi-react",
-  "version": "0.1.0",
-  "description": "A small React component that adds cat ears to wrapped UI.",
-  "license": "MIT",
-  "type": "module",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
-  },
-  "devDependencies": {
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
-    "tsup": "^8.0.0",
-    "typescript": "^5.8.0"
-  },
-  "scripts": {
-    "build": "tsup",
-    "dev": "tsup --watch",
-    "typecheck": "tsc --noEmit",
-    "example:dev": "npm --prefix example run dev",
-    "example:build": "npm --prefix example run build"
-  }
+	"name": "@takashi145/nekomimi-react",
+	"version": "0.1.0",
+	"description": "React component that adds cat ears (猫耳) to wrapped UI elements.",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/takashi145/nekomimi-react.git"
+	},
+	"keywords": [
+		"react",
+		"cat ears",
+		"nekomimi",
+		"猫耳",
+		"component",
+		"ui"
+	],
+	"type": "module",
+	"sideEffects": false,
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"peerDependencies": {
+		"react": "^18.0.0 || ^19.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^19.1.0",
+		"@types/react-dom": "^19.1.0",
+		"tsup": "^8.0.0",
+		"typescript": "^5.8.0"
+	},
+	"scripts": {
+		"build": "tsup",
+		"dev": "tsup --watch",
+		"typecheck": "tsc --noEmit",
+		"example:dev": "npm --prefix example run dev",
+		"example:build": "npm --prefix example run build"
+	}
 }

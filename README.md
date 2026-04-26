@@ -1,6 +1,22 @@
 # nekomimi-react
 
-A small React component that adds cat ears (猫耳) to wrapped UI elements.
+React component that adds cat ears (猫耳) to wrapped UI elements.
+
+## Install
+
+```bash
+npm install @takashi145/nekomimi-react
+```
+
+## Usage
+
+```tsx
+import { Nekomimi } from '@takashi145/nekomimi-react';
+
+<Nekomimi earColor="#555" earSize={18}>
+  <button>Click me</button>
+</Nekomimi>
+```
 
 ## Props
 
