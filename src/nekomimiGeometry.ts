@@ -51,12 +51,12 @@ export function getEarMetrics(earScale: number): EarMetrics {
   // 肩（左右の膨らみのピーク）は先端から46%下がった位置
   const shoulderY = tipY + earHeight * 0.46;
 
-  // 内耳は外耳の58%の高さ、42%の幅
-  const innerHeight = earHeight * 0.58;
+  // 内耳は外耳の55%の高さ、42%の幅
+  const innerHeight = earHeight * 0.55;
   const innerWidth = earWidth * 0.42;
   const innerHalfWidth = innerWidth / 2;
-  // 内耳付け根は外耳付け根より 18% 上（耳の中に浮いて見える）
-  const innerBaseY = baseY - earHeight * 0.18;
+  // 内耳付け根は外耳付け根より 22% 上（耳の中に浮いて見える）
+  const innerBaseY = baseY - earHeight * 0.22;
   const innerTipY = innerBaseY - innerHeight;
   // 内耳の肩は内耳先端から50%下がった位置
   const innerShoulderY = innerTipY + innerHeight * 0.5;
@@ -145,7 +145,7 @@ export function buildEarPaths(leftX: number, rightX: number, earScale: number): 
   // 先端を中心からわずかに内側に引き込み、ギザつきを防ぐオフセット
   const tipInset = earHalfWidth * 0.2;
   // 先端を少し上に持ち上げ、丸みを出すための値
-  const tipLift = earHalfWidth * 0.12;
+  const tipLift = earHalfWidth * 0.2;
   // 肩のX方向の引き込み率（0.78 で半幅の78%位置に肩を置く）
   const shoulderScale = 0.78;
   // 付け根をわずかに下に膨らませ、自然なカーブを出すための値
@@ -184,10 +184,10 @@ export function buildEarPaths(leftX: number, rightX: number, earScale: number): 
 
     return [
       `M ${px(earX - innerHalfWidth)} ${py(innerBaseY)}`,
-      `Q ${px(earX - innerHalfWidth * 0.72)} ${py(innerShoulderY)} ${px(earX - innerTipInset)} ${py(innerTipY)}`,
+      `Q ${px(earX - innerHalfWidth * 0.8)} ${py(innerShoulderY)} ${px(earX - innerTipInset)} ${py(innerTipY)}`,
       // 先端中央をごくわずか上に持ち上げてシャープな印象にする
-      `Q ${px(earX)} ${py(innerTipY - innerHalfWidth * 0.03)} ${px(earX + innerTipInset)} ${py(innerTipY)}`,
-      `Q ${px(earX + innerHalfWidth * 0.72)} ${py(innerShoulderY)} ${px(earX + innerHalfWidth)} ${py(innerBaseY)}`,
+      `Q ${px(earX)} ${py(innerTipY - innerHalfWidth * 0.2)} ${px(earX + innerTipInset)} ${py(innerTipY)}`,
+      `Q ${px(earX + innerHalfWidth * 0.8)} ${py(innerShoulderY)} ${px(earX + innerHalfWidth)} ${py(innerBaseY)}`,
       'Z',
     ].join(' ');
   }
